@@ -1,0 +1,35 @@
+{
+  "name": "workspace",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.1",
+    "font-awesome": "~4.5.0",
+    "angular-route": "~1.5.3",
+    "angular-ui-router": "~0.2.18"
+  },
+  "keywords": [
+    "Grafton",
+    "Grafton MA",
+    "Library",
+    "Public Library",
+    "Grafton Public Library",
+    "Friends"
+  ],
+  "authors": [
+    "Dan Cusher"
+  ],
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5"
+  }
+}

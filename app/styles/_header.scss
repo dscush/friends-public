@@ -1,0 +1,105 @@
+$jumbotron_bg_color: #00A787;
+$navbar_bg_color: #008777;
+$navpill_bg_color: $jumbotron_bg_color;
+$jumbotron_color: #fff;
+$navbar_color: #fff;
+
+@mixin hide-not-on-home() {
+	&:not(.home) {
+		display: none;
+	}
+}
+
+/* Custom page header */
+.header {
+	border-bottom: 1px solid #e5e5e5;
+
+	/* Make the masthead heading the same height as the navigation */
+	h3 {
+		color: #fff;
+		text-shadow: 0 0 10px white;
+		margin-top: 0;
+		margin-bottom: 0;
+		line-height: 50px;
+		padding-bottom: 19px;
+		display: inline;
+	}
+	a.navbar-brand {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: 0px;
+		line-height: 50px;
+		
+		img {
+			margin: 0px;
+			padding: 0px;
+			height: 50px;
+		}
+	}
+}
+
+
+/* Main marketing message and sign up button */
+.jumbotron {
+	margin: 0px auto;
+	padding: 20px 20px;
+	border-bottom: 1px solid #e5e5e5;
+	background: $jumbotron_bg_color;
+	color: #fff;
+	.btn {
+		font-size: 21px;
+		padding: 14px 24px;
+	}
+	h1 {
+		text-shadow: 0 0 10px white;
+	}
+	p {
+		@media (max-width: $screen-sm-max) {
+			@include hide-not-on-home();
+		}
+	}
+	img {
+		@media (max-width: $screen-xs-max) {
+			@include hide-not-on-home();
+		}
+	}
+}
+
+
+
+.navbar-inverse {
+	background: $navbar_bg_color;
+	color: $navbar_color;
+	.navbar-nav {
+		> .open {
+			> a, > a:hover, > a:focus {
+				background: $navpill_bg_color;
+			}
+		}
+		> :not(.open) {
+			> a {
+				color: $navbar_color;
+			}
+			> a:hover {
+				text-shadow: 0 0 3px $navbar_color;
+			}
+		}
+	}
+}
+
+
+/*
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+	background-color: #303f9f;
+	color: #eeeeee;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+	color: #000000;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu {
+	background-color: #303f9f;
+	color: #eeeeee;
+}
+
+*/
