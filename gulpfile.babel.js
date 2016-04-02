@@ -98,8 +98,11 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
       baseDir: ['.tmp', 'app'],
       routes: {
         '/bower_components': 'bower_components'
-      }
-    }
+      },
+    },
+    ui: {
+      port: 8081,
+    },
   });
 
   gulp.watch([
