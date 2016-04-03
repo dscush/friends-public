@@ -19,21 +19,21 @@ var app = angular.module('friendsApp',['ui.router'])
                     }
                 }
             })
-                    // route for the aboutus page
-            .state('app.aboutus', {
-                url:'aboutus',
+                    // route for the about page
+            .state('app.about', {
+                url:'about',
                 views: {
                     'content@': {
                         template: '<h1>About Us - To be Completed</h1>'
                    }
                 }
             })
-                    // route for the contactus page
-            .state('app.contactus', {
-                url:'contactus',
+                    // route for the contact page
+            .state('app.contact', {
+                url:'contact',
                 views: {
                     'content@': {
-                        templateUrl : 'views/contactus.html',
+                        templateUrl : 'views/contact.html',
                         controller  : 'ContactController'
                      }
                 }
