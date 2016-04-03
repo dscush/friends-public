@@ -37,6 +37,16 @@ var app = angular.module('friendsApp',['ui.router'])
                         controller  : 'ContactController'
                      }
                 }
+            })
+                    // route for the join page
+            .state('app.join', {
+                url:'join',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/join.html',
+                        controller  : 'JoinController'
+                     }
+                }
             });
             
             $urlRouterProvider.otherwise('/');

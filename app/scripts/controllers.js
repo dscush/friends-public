@@ -10,5 +10,9 @@ var app = angular.module('friendsApp')
 		$scope.bar = $state.current.name;
 		$scope.$state = $state;
 	}])
+	
+	.controller('JoinController', ['$scope', function($scope) {
+		
+	}])
 
 ;
