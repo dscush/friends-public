@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('friendsApp',['ui.router'])
+var app = angular.module('friendsApp',['ui.router', 'ui.router.title'])
 .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
                     // route for the home page
@@ -16,8 +16,11 @@ var app = angular.module('friendsApp',['ui.router'])
                     },
                     'footer': {
                         templateUrl : 'views/footer.html'
-                    }
-                }
+                    },
+                },
+                resolve: {
+                    $title: function() { return 'Home';}
+                },
             })
                     // route for the about page
             .state('app.about', {
@@ -26,7 +29,10 @@ var app = angular.module('friendsApp',['ui.router'])
                     'content@': {
                         template: '<h1>About Us - To be Completed</h1>'
                    }
-                }
+                },
+                resolve: {
+                    $title: function() { return 'About Us';}
+                },
             })
                     // route for the contact page
             .state('app.contact', {
@@ -36,7 +42,10 @@ var app = angular.module('friendsApp',['ui.router'])
                         templateUrl : 'views/contact.html',
                         controller  : 'ContactController'
                      }
-                }
+                },
+                resolve: {
+                    $title: function() { return 'Contact Us';}
+                },
             })
                     // route for the join page
             .state('app.join', {
@@ -46,7 +55,10 @@ var app = angular.module('friendsApp',['ui.router'])
                         templateUrl : 'views/join.html',
                         controller  : 'JoinController'
                      }
-                }
+                },
+                resolve: {
+                    $title: function() { return 'Join The Friends';}
+                },
             });
             
             $urlRouterProvider.otherwise('/');

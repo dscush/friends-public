@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>workspace</title>
+    <title ng-bind="($title || 'Home') + ' - Friends of the Grafton Public Library'">Friends of the Grafton Public Library</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -63,6 +63,7 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-ui-router-title/angular-ui-router-title.js"></script>
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
