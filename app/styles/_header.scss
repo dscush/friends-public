@@ -1,8 +1,11 @@
 $jumbotron_bg_color: #00A787;
-$navbar_bg_color: #008777;
+$navbar_bg_color: darken($jumbotron_bg_color, 7%);
 $navpill_bg_color: $jumbotron_bg_color;
 $jumbotron_color: #fff;
 $navbar_color: #fff;
+$navpill_external_color: $navbar_color;
+$navpill_external_bg_color: darken($jumbotron_bg_color, 7%);
+$navpill_hover_bg_color: darken($jumbotron_bg_color, 20%);
 
 @mixin hide-not-on-home() {
 	&:not(.home) {
@@ -82,7 +85,12 @@ $navbar_color: #fff;
 			}
 			> a:hover {
 				text-shadow: 0 0 3px $navbar_color;
+				background: $navpill_hover_bg_color;
 			}
+		}
+		> .external > a {
+			background: $navpill_external_bg_color;
+			color: $navpill_external_color;
 		}
 	}
 }
