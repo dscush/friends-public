@@ -27,7 +27,8 @@ var app = angular.module('friendsApp',['ui.router', 'ui.router.title'])
                 url:'about',
                 views: {
                     'content@': {
-                        template: '<h1>About Us - To be Completed</h1>'
+                        templateUrl : 'views/about.html',
+                        controller  : 'AboutController'
                    }
                 },
                 resolve: {

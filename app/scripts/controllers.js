@@ -15,4 +15,8 @@ var app = angular.module('friendsApp')
 		
 	}])
 
+	.controller('AboutController', ['$scope', function($scope) {
+
+	}])
+
 ;
