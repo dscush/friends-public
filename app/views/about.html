@@ -1,13 +1,33 @@
     <div class="container">
         <div class="row row-content join" ng-controller="JoinController">
             <div class="col-xs-12">
-				<h2>Join The Friends</h2>
+				<h2>About The Friends</h2>
+				<h3>Who We Are and What We Do</h3>
                 <p>
                     The Friends of the Grafton Public Library is a volunteer organization that works to support our library through advocacy and activities designed to raise money for library needs which are not funded by our local, state or federal government.
                 </p>
                 <p>
                     We use the money we raise from the Down Under Bookstore and memberships to offer a variety of programs to the Grafton community. These programs include museum passes, the summer reading program, exhibits, speakers, workshops, and concerts.
                 </p>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <h3>Current Leadership</h3>
+                <h4>Board of Directors</h4>
+                <table class="table">
+                    <tr ng-repeat="officer in leadership.board" ng-class="{warning: officer.name.toLowerCase() === 'vacant'}">
+                        <td>{{officer.position}}</td>
+                        <td>{{officer.name}}</td>
+                    </tr>
+                </table>
+                <div ng-repeat="committee in leadership.committees">
+                    <h4>{{committee.name}}</h4>
+                    <table class="table">
+                        <tr ng-repeat="member in committee.members" ng-class="{warning: member.name.toLowerCase() === 'vacant'}">
+                            <td>{{member.position}}</td>
+                            <td>{{member.name}}</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
