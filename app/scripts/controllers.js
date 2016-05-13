@@ -66,14 +66,11 @@ var app = angular.module('friendsApp')
 			committees: [
 				{
 					name: "Publicity Committee",
+					description: "The Publicity Committee's tasks include managing all communication with the public (advertisements, press releases, etc.), assisting the Membership Committee in communication with the membership, and discussing how the Friends can assist the library's publicity/marketing needs with the Library Director and/or staff liason. The committee is appointed by the President and consists of at least two members, including a Chair who serves on the Board of Directors.",
 					members: [
 						{
 							position: "Chair",
 							name: "Michelle Dalal"
-						},
-						{
-							position: "Member",
-							name: "Vacant"
 						},
 						{
 							position: "Member",
@@ -83,13 +80,10 @@ var app = angular.module('friendsApp')
 				},
 				{
 					name: "Membership Committee",
+					description: "The Membership Committee's tasks include maintaining the membership list, ensuring that renewal notices are mailed, communicating with the membership via Constant Contact and Facebook, and recording and acknowledging all membership dues received and ensuring that the Tresurer receives the money. The committee is appointed by the President and consists of at least two members, including a Chair who serves on the Board of Directors.",
 					members : [
 						{
 							position: "Chair",
-							name: "Vacant"
-						},
-						{
-							position: "Member",
 							name: "Vacant"
 						},
 						{
@@ -100,6 +94,7 @@ var app = angular.module('friendsApp')
 				},
 				{
 					name: "Nominating Committee",
+					description: "The Nominating Committee's task is to present at least one nomination for each office to the general membership at the Annual Meeting. The committee is appointed by the Board of Directors and consists of at least two people.",
 					members: [
 						{
 							position: "Chair",

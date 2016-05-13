@@ -21,6 +21,7 @@
                 </table>
                 <div ng-repeat="committee in leadership.committees">
                     <h4>{{committee.name}}</h4>
+                    <p>{{committee.description}}</p>
                     <table class="table">
                         <tr ng-repeat="member in committee.members" ng-class="{warning: member.name.toLowerCase() === 'vacant'}">
                             <td>{{member.position}}</td>
