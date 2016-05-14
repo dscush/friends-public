@@ -1,9 +1,35 @@
 	<div class="container">
 		<div class="row row-content contactus" ng-controller="ContactController">
-				<div class="col-xs-12">
-					<h2>Contact Us</h2>
-					<p>Interested in becoming a Friend?  Have questions about what we do?  Go ahead and fill out the form! </p>
-				</div>
+			<div class="col-xs-12">
+				<h2>Contact Us</h2>
+				<p>Interested in becoming a Friend?  Have questions about what we do?  Go ahead and fill out the form! </p>
 			</div>
-		
+			<div class="col-xs-12">
+				<form ng-submit="submit(contactForm)">
+					<div class="form-group row">
+						<div class="col-xs-12 col-sm-6">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" id="name" placeholder="Name" ng-model="contactForm.name" required>
+						</div>
+						<div class="col-xs-12 col-sm-6">
+							<label for="email">Email address</label>
+							<input type="email" class="form-control" id="email" placeholder="Email" ng-model="contactForm.email" required>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-12">
+							<label for="subject">Subject</label>
+							<input type="text" class="form-control" id="subject" placeholder="Subject" ng-model="contactForm.subject" required>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-12">
+							<label for="message">Message</label>
+							<textarea class="form-control" rows="6" name="message" id="message" ng-model="contactForm.message" required></textarea>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+				</form>
+			</div>
+		</div>
 	</div>

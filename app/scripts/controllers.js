@@ -2,7 +2,16 @@
 var app = angular.module('friendsApp')
 
 	.controller('ContactController', ['$scope', function($scope) {
-		
+		$scope.contactForm = {
+			name: "",
+			email: "",
+			subject: "",
+			message: "",
+		}
+		$scope.submit = function (contactForm) {
+			//TODO: get server up and running and implement something on server side
+			console.log(contactForm)
+		}
 	}])
 	
 	.controller('HeaderController', ['$scope', '$state', function($scope, $state) {
