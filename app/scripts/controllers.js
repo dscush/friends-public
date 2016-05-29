@@ -1,16 +1,16 @@
 'use strict';
 var app = angular.module('friendsApp')
 
-	.controller('ContactController', ['$scope', function($scope) {
+	.controller('ContactController', ['$scope', '$stateParams', function($scope, $stateParams) {
 		$scope.contactForm = {
-			name: "",
-			email: "",
-			subject: "",
-			message: "",
-		}
+			name: $stateParams.name,
+			email: $stateParams.email,
+			subject: $stateParams.subject,
+			message: $stateParams.message
+		};
 		$scope.submit = function (contactForm) {
 			//TODO: get server up and running and implement something on server side
-			console.log(contactForm)
+			console.log(contactForm);
 		}
 	}])
 	

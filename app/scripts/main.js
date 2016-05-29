@@ -38,6 +38,12 @@ var app = angular.module('friendsApp',['ui.router', 'ui.router.title'])
                     // route for the contact page
             .state('app.contact', {
                 url:'contact',
+                params: {
+                    name: "",
+                    email: "",
+                    subject: "",
+                    message: "",
+                },
                 views: {
                     'content@': {
                         templateUrl : 'views/contact.html',

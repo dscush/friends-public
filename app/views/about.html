@@ -16,7 +16,7 @@
                 <table class="table">
                     <tr ng-repeat="officer in leadership.board" ng-class="{warning: officer.name.toLowerCase() === 'vacant'}">
                         <td>{{officer.position}}</td>
-                        <td>{{officer.name}}</td>
+                        <td>{{officer.name}}<span ng-show="officer.name.toLowerCase() === 'vacant'"> (<a ui-sref="app.contact({subject: officer.position + ' vacancy', message: 'Hi, I\'d like to be more involved in the Friends and I\'m interested in the ' + officer.position + ' role.'})">Apply here!</a>)</span></td>
                     </tr>
                 </table>
                 <div ng-repeat="committee in leadership.committees">
@@ -25,7 +25,7 @@
                     <table class="table">
                         <tr ng-repeat="member in committee.members" ng-class="{warning: member.name.toLowerCase() === 'vacant'}">
                             <td>{{member.position}}</td>
-                            <td>{{member.name}}</td>
+                            <td>{{member.name}}<span ng-show="member.name.toLowerCase() === 'vacant'"> (<a ui-sref="app.contact({subject: committee.name, message: 'Hi, I\'d like to be more involved in the Friends and I\'m interested in the ' + committee.name + '.'})">Apply here!</a>)</span></td>
                         </tr>
                     </table>
                 </div>
