@@ -66,6 +66,18 @@ var app = angular.module('friendsApp',['ui.router', 'ui.router.title'])
                 resolve: {
                     $title: function() { return 'Join The Friends';}
                 },
+            })
+                    // route for the down under page
+            .state('app.downunder', {
+                url:'downunder',
+                views: {
+                    'content@': {
+                        templateUrl : 'views/downunder.html'
+                     }
+                },
+                resolve: {
+                    $title: function() { return 'Down Under Bookstore';}
+                },
             });
             
             $urlRouterProvider.otherwise('/');
