@@ -1,5 +1,5 @@
-    <div class="container">
-        <div class="row row-content join" ng-controller="JoinController">
+    <div class="container row-content" ng-controller="AboutController">
+        <div class="row">
             <div class="col-xs-12">
 				<h2>About The Friends</h2>
 				<h3>Who We Are and What We Do</h3>
@@ -10,25 +10,40 @@
                     We use the money we raise from the <a ui-sref="app.downunder">Down Under Bookstore</a> and <a ui-sref="app.join">memberships</a> to offer a variety of programs to the Grafton community. These programs include museum passes, the summer reading program, exhibits, speakers, workshops, and concerts.
                 </p>
             </div>
-            <div class="col-xs-12 col-sm-8">
-                <h3>Current Leadership</h3>
-                <h4>Board of Directors</h4>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Board of Directors</h3>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <p>The Board of Directors makes most of the major decisions on behalf of the Friends, such as approving the Library Director's funding requests and deciding which fundraisers and events to organize.  The board meets monthly on the second Tuesday of the month.  Though only board members can vote during board meetings, all members are welcome to attend, and members can have items added to the agenda by <a ui-sref="app.contact({subject: 'Board meeting agenda item', message: 'Hi, I\'d like to add an item to the agenda for the board to discuss at the next meeting.'})">notifying the president</a> at least seven days before the meeting.</p>
+                <p>If you're interested in serving on the board of directors, <a ui-sref="app.contact({subject: 'Interested in joining Board', message: 'Hi, I\'d like to be more involved with the Friends, and I\'m interested in serving on the Board of Directors.'})">let us know!</a>.</p>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <h4>Board Members</h4>
                 <table class="table">
                     <tr ng-repeat="officer in leadership.board" ng-class="{warning: officer.name.toLowerCase() === 'vacant'}">
                         <td>{{officer.position}}</td>
                         <td>{{officer.name}}<span ng-show="officer.name.toLowerCase() === 'vacant'"> (<a ui-sref="app.contact({subject: officer.position + ' vacancy', message: 'Hi, I\'d like to be more involved in the Friends and I\'m interested in the ' + officer.position + ' role.'})">Apply here!</a>)</span></td>
                     </tr>
                 </table>
-                <div ng-repeat="committee in leadership.committees">
-                    <h4>{{committee.name}}</h4>
-                    <p>{{committee.description}}</p>
-                    <table class="table">
-                        <tr ng-repeat="member in committee.members" ng-class="{warning: member.name.toLowerCase() === 'vacant'}">
-                            <td>{{member.position}}</td>
-                            <td>{{member.name}}<span ng-show="member.name.toLowerCase() === 'vacant'"> (<a ui-sref="app.contact({subject: committee.name, message: 'Hi, I\'d like to be more involved in the Friends and I\'m interested in the ' + committee.name + '.'})">Apply here!</a>)</span></td>
-                        </tr>
-                    </table>
-                </div>
+            </div>
+        </div>
+        <div class="row" ng-repeat="committee in leadership.committees">
+            <div class="col-xs-12">
+                <h3>{{committee.name}}</h3>
+            </div>
+            <div class="col-xs-12 col-sm-7">
+                <p>{{committee.description}}</p>
+            </div>
+            <div class="col-xs-12 col-sm-5">
+                <h4>Committee Members</h4>
+                <table class="table">
+                    <tr ng-repeat="member in committee.members" ng-class="{warning: member.name.toLowerCase() === 'vacant'}">
+                        <td>{{member.position}}</td>
+                        <td>{{member.name}}<span ng-show="member.name.toLowerCase() === 'vacant'"> (<a ui-sref="app.contact({subject: committee.name, message: 'Hi, I\'d like to be more involved in the Friends and I\'m interested in the ' + committee.name + '.'})">Apply here!</a>)</span></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
