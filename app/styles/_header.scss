@@ -7,12 +7,6 @@ $navpill_external_color: $navbar_color;
 $navpill_external_bg_color: darken($jumbotron_bg_color, 7%);
 $navpill_hover_bg_color: darken($jumbotron_bg_color, 20%);
 
-@mixin hide-not-on-home() {
-	&:not(.home) {
-		display: none;
-	}
-}
-
 /* Custom page header */
 .header {
 	border-bottom: 1px solid #e5e5e5;
@@ -55,16 +49,6 @@ $navpill_hover_bg_color: darken($jumbotron_bg_color, 20%);
 	}
 	h1 {
 		text-shadow: 0 0 10px white;
-	}
-	p {
-		@media (max-width: $screen-sm-max) {
-			@include hide-not-on-home();
-		}
-	}
-	img {
-		@media (max-width: $screen-xs-max) {
-			@include hide-not-on-home();
-		}
 	}
 }
 
