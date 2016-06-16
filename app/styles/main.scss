@@ -110,3 +110,11 @@ body {
   padding: 20px 0px;
   background-color: #32393f;
 }
+
+//two workarounds for adblock overkill
+.my-fa-facebook:before {
+  content: "\f09a";
+}
+.fb{
+  @extend .btn-facebook
+}
