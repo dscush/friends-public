@@ -56,7 +56,7 @@ var app = angular.module('friendsApp')
 				},
 				{
 					position: "Membership Chair",
-					name: "Vacant"
+					name: "Marie Berardi"
 				},
 				{
 					position: "At-Large (Co-Treasurer)",
