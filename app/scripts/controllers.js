@@ -20,6 +20,9 @@ var app = angular.module('friendsApp')
 		$scope.$state = $state;
 	}])
 	
+	.controller('HomeController', ['$scope', function($scope) {
+	}])
+
 	.controller('JoinController', ['$scope', function($scope) {
 		
 	}])

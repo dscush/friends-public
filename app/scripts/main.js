@@ -11,8 +11,8 @@ var app = angular.module('friendsApp',['ui.router', 'ui.router.title'])
                         controller : 'HeaderController',
                     },
                     'content': {
-                        template : '<h1>Index - To be Completed</h1>',
-                        controller  : 'IndexController',
+                        templateUrl : 'views/home.html',
+                        controller  : 'HomeController',
                     },
                     'footer': {
                         templateUrl : 'views/footer.html'
