@@ -33,6 +33,11 @@ gulp.task('scripts', () => {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('misc_docs', () => {
+  return gulp.src('app/misc_docs/**/*')
+    .pipe(gulp.dest('dist/misc_docs'));
+});
+
 function lint(files, options) {
   return () => {
     return gulp.src(files)
@@ -51,7 +56,7 @@ const testLintOptions = {
 gulp.task('lint', lint('app/scripts/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
-gulp.task('html', ['styles', 'scripts'], () => {
+gulp.task('html', ['styles', 'scripts', 'misc_docs'], () => {
   return gulp.src('app/**/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if('*.css', $.cssnano()))
