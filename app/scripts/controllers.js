@@ -1,8 +1,7 @@
 'use strict';
 /*global angular*/
 angular.module('friendsApp')
-
-	.controller('ContactController', ['$scope', '$stateParams', function($scope, $stateParams) {
+	.controller('ContactController', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
 		$scope.contactForm = {
 			name: $stateParams.name,
 			email: $stateParams.email,
@@ -10,7 +9,15 @@ angular.module('friendsApp')
 			message: $stateParams.message
 		};
 		$scope.submit = function (contactForm) {
-			//TODO: get server up and running and implement something on server side
+			//TODO: Clean parameters to prevent clipping due to quotes and stuff
+			//TODO: Connect to actual email on back end
+			//TODO: Handle success and failure on front end
+			var url =
+				'/cgi-bin/contact2.py?name=' + contactForm.name +
+				'&email=' + contactForm.email +
+				'&subject=' + contactForm.subject +
+				'&message=' + contactForm.message;
+			$http.get(url).then(function(response){ $scope.contactForm = {message:'succes'}; console.log(response); }, function(response){ $scope.contactForm = {message:'failure'}; console.log(response); });
 			console.log(contactForm);
 		};
 	}])
