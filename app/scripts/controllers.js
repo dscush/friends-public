@@ -2,6 +2,9 @@
 /*global angular*/
 angular.module('friendsApp')
 	.controller('ContactController', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
+		$scope.sending = false;
+		$scope.sentSuccess = false;
+		$scope.sentFailure = false;
 		$scope.contactForm = {
 			name: $stateParams.name,
 			email: $stateParams.email,
@@ -11,13 +14,27 @@ angular.module('friendsApp')
 		$scope.submit = function (contactForm) {
 			//TODO: Clean parameters to prevent clipping due to quotes and stuff
 			//TODO: Connect to actual email on back end
-			//TODO: Handle success and failure on front end
+			$scope.sending = true;
+			$scope.sentSuccess = false;
+			$scope.sentFailure = false;
 			var url =
 				'/cgi-bin/contact2.py?name=' + contactForm.name +
 				'&email=' + contactForm.email +
 				'&subject=' + contactForm.subject +
 				'&message=' + contactForm.message;
-			$http.get(url).then(function(response){ $scope.contactForm = {message:'succes'}; console.log(response); }, function(response){ $scope.contactForm = {message:'failure'}; console.log(response); });
+			$http.get(url).then(
+				function(response){
+					$scope.sending = false;
+					$scope.sentSuccess = true;
+					$scope.contactForm = {};
+					console.log(response);
+				},
+				function(response){
+					$scope.sending = false;
+					$scope.sentFailure = true;
+					console.log(response);
+				}
+			);
 			console.log(contactForm);
 		};
 	}])

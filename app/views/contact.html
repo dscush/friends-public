@@ -28,7 +28,25 @@
 							<textarea class="form-control" rows="6" name="message" id="message" ng-model="contactForm.message" required></textarea>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+					<div class="row">
+						<div class="col-xs-12 col-sm-2">
+							<button type="submit" class="btn btn-primary btn-lg" ng-disabled="sending">{{sending && 'Sending...' || 'Submit'}}</button>
+						</div>
+						<div class="col-xs-12 col-sm-10">
+							<div class="alert alert-success" role="alert" ng-show="sentSuccess">
+								<button type="button" class="close" ng-click="sentSuccess = false;" aria-label="Close">
+									<span aria-hidden="true">×</span>
+								</button>
+								<strong>Message Sent!</strong>  We will be in touch with you shortly...
+							</div>
+							<div class="alert alert-danger" role="alert" ng-show="sentFailure">
+								<button type="button" class="close" ng-click="sentFailure = false;" aria-label="Close">
+									<span aria-hidden="true">×</span>
+								</button>
+								<strong>Server Error:</strong>  Sorry, something went wrong on our end.  Try emailing info@friendsgpl.org directly.
+							</div>
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
