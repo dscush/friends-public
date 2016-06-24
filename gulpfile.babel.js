@@ -4,6 +4,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
+import path from 'path';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -77,10 +78,12 @@ gulp.task('images', () => {
 });
 
 gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
-    .concat('app/fonts/**/*'))
+  return gulp.src(['bower_components/**/*.{eot,svg,ttf,woff,woff2}','app/fonts/**/*'])
     .pipe(gulp.dest('.tmp/fonts'))
-    .pipe(gulp.dest('dist/fonts'));
+    .pipe(gulp.dest(function(file) {
+      file.path = path.join(file.base, path.basename(file.path));
+      return 'dist/fonts';
+    }));
 });
 
 gulp.task('extras', () => {
