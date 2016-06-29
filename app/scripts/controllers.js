@@ -71,6 +71,10 @@ angular.module('friendsApp')
 					name: 'Ellen Gougen'
 				},
 				{
+					position: 'Co-Treasurer',
+					name: 'Karen Kara’a'
+				},
+				{
 					position: 'Director of Down Under',
 					name: 'Mary Tulloch'
 				},
@@ -83,12 +87,12 @@ angular.module('friendsApp')
 					name: 'Marie Berardi'
 				},
 				{
-					position: 'At-Large (Co-Treasurer)',
-					name: 'Karen Kara’a'
+					position: 'At-Large',
+					name: 'Alberta Dumfree'
 				},
 				{
 					position: 'At-Large',
-					name: 'Alberta Dumfree'
+					name: 'Donna Trainor'
 				},
 				{
 					position: 'At-Large',
@@ -120,7 +124,7 @@ angular.module('friendsApp')
 					members: [
 						{
 							position: 'Chair',
-							name: 'Vacant'
+							name: 'Marie Berardi'
 						},
 						{
 							position: 'Member',
